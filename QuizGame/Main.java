@@ -19,7 +19,7 @@ public class Main {
        
             System.out.println("\nDigite seu nome para comecar o jogo: "); 
             String name = sc.nextLine();
-            System.out.printf("\n%s, bem-vindo(a) ao Quiz sobre Descarte de Lixo!", name);
+            System.out.printf("\n%s, bem-vindo(a) ao Quiz sobre Descarte de Lixo!\n", name);
             NewPlayer player = new NewPlayer(name);
             jogadores.add(player);
             

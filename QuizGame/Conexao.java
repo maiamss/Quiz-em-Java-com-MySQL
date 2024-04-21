@@ -19,7 +19,8 @@ public class Conexao {
         Connection con = null;
         
         try {
-            String url = "jdbc:.mysql://localhost:3306/QuizGamePOO?user=root&password=";
+          
+            String url = "jdbc:mysql://localhost:3306/QuizGamePOO?user=root&password=&useSSL=false";
             con = DriverManager.getConnection(url);
             
         } catch (SQLException error) {

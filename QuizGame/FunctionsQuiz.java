@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 
 import java.sql.SQLException;
 import java.util.Scanner;
-
+import java.sql.Connection;
 
 
 /*
@@ -26,17 +26,139 @@ public class FunctionsQuiz {
     //método para responder as perguntas do quiz
     public void answer (){ 
       
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
        
        try{       
            Scanner sc = new Scanner(System.in);
        
-            Conexao conexao = new Conexao();
-            conexao.conectaBD();
-
+               
+            Connection conexao = Conexao.conectaBD();
             this.pontos = 0;
 
             String query = "SELECT * FROM questao";
-            Statement statement = conexao.conectaBD().createStatement();
+            Statement statement = conexao.createStatement();
 
             ResultSet rs = statement.executeQuery(query);
 
@@ -48,17 +170,21 @@ public class FunctionsQuiz {
                 System.out.println("(B): " + rs.getString("B"));
                 System.out.println("(C): " + rs.getString("C"));
                 System.out.println("(D): " + rs.getString("D"));
-                System.out.println("(E): " + rs.getString("E"));
+               
 
                  // a resposta do usuário
                 String resposta = sc.next();
-
-                if(resposta.equalsIgnoreCase(rs.getString("resposta"))){
+                if (!"AaBbCcDd".contains(resposta)) {
+                    System.out.println("Alternativa invalida, voce perdeu essa questão");
+                }else if(resposta.equalsIgnoreCase(rs.getString("resposta"))){
                     this.pontos +=1;
-
+                    System.out.println("VOCE ACERTOU");
+                }else{
+                    System.out.println("VOCE ERROU");
                 }
                 System.out.println("");
             }
+             System.out.println("FIM DE JOGO");
                 Conexao.closeConnetion();
 
         }catch(SQLException erro){
