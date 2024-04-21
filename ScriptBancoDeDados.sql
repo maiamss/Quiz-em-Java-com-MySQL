@@ -1,7 +1,7 @@
 
 CREATE DATABASE QuizGamePOO;
 
-USE quiz;
+USE QuizGamePOO;
 
 CREATE TABLE questao (
     idQuestao INT AUTO_INCREMENT PRIMARY KEY ,
