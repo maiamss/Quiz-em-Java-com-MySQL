@@ -1,7 +1,7 @@
 
 CREATE DATABASE QuizGamePOO;
 
-USE quiz;
+USE QuizGamePOO;
 
 CREATE TABLE questao (
     idQuestao INT AUTO_INCREMENT PRIMARY KEY ,
@@ -19,7 +19,6 @@ CREATE TABLE jogador_quiz (
     pontuacao INT NOT NULL
 );
 
-USE quiz;
 
 INSERT INTO questao (nomeQuestao, a, b, c, d, resposta) VALUES 
 ("O que é coleta seletiva?", "Descartar todo o lixo em um único recipiente.", "Separar os resíduos em diferentes categorias para facilitar o processo de reciclagem.", "Queimar o lixo para gerar energia.", "Enterrar o lixo em aterros sanitários.", "B"),
